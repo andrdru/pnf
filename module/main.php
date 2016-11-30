@@ -1,0 +1,1 @@
+your host defined as <b><?=HOST?></b> by conf file<br/>
