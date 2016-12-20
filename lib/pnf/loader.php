@@ -77,7 +77,9 @@ class loader extends data
 	{
 		$this->viewSetFullPath($viewPath);
 		$template = $_SERVER['DOCUMENT_ROOT'] . $templatePath . $template;
+		ob_start();
 		$this->_processLoad($template, $loadType);
+		ob_end_flush();
 	}
 
 	/**
