@@ -120,6 +120,15 @@ abstract class data
 	}
 
 	/**
+	 * get json from php://input stream and decode it
+	 * @return mixed
+	 */
+	function decodeJsonFromStream()
+	{
+		return json_decode(file_get_contents('php://input'), true);
+	}
+
+	/**
 	 * @param string $name some param name to set
 	 * @param $value
 	 */
