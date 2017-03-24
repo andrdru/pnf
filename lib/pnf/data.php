@@ -87,7 +87,27 @@ abstract class data
 		$this->err[$fname] = $text;
 	}
 
-	/***
+	/**
+	 * @brief check if error and optionally return
+	 * @param string $fname name of function/error key
+	 * @param bool $getErr do err return
+	 * @param bool $clearWhenGet do chear on returning
+	 * @return bool|mixed err flag or value
+	 */
+	function _is_err($fname, $getErr = false, $clearWhenGet = true)
+	{
+		$ans = false;
+		if (isset($this->err[$fname]) && !empty($this->err[$fname])) {
+			if (!$getErr) {
+				$ans = true;
+			} else {
+				$ans = $this->_getErr($fname, $clearWhenGet);
+			}
+		}
+		return $ans;
+	}
+
+	/**
 	 * @brief load data from raw array to $this->fd array
 	 *
 	 * @param array $arr array to load
