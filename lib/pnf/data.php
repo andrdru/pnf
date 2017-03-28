@@ -160,4 +160,30 @@ abstract class data
 		}
 		return $ans;
 	}
+
+	/**
+	 * determine error
+	 * @param $arr array of array(condition,errorDescription)
+	 * @return bool|string
+	 */
+	function errDeterm($arr)
+	{
+		$ans = FALSE;
+		$enough = is_array($arr);
+		if ($enough) {
+			$desc = array();
+			if (!is_array($arr[0])) {
+				$arr = array($arr);
+			}
+
+			foreach ($arr as $el) {
+				if (!$el[0]) {
+					$desc[] = $el[1];
+				}
+			}
+
+			$ans = implode(",", $desc);
+		}
+		return $ans;
+	}
 }
