@@ -10,10 +10,6 @@ abstract class data
 	 */
 	public $modules;
 	/**
-	 * @var array() seo parameters
-	 */
-	public $seo;
-	/**
 	 * @var array() Form Data
 	 */
 	public $fd;
@@ -24,7 +20,7 @@ abstract class data
 	/**
 	 * @var array() current error
 	 */
-	private $err;
+	private $_err;
 
 	/**
 	 * @brief init data
@@ -32,14 +28,9 @@ abstract class data
 	protected function _init()
 	{
 		$this->_param = array();
-		$this->fd = array();
-		$this->err = array();
+		$this->_err = array();
 		$this->modules = array();
-		$this->seo = array(
-			"keywords" => "",
-			"description" => "",
-			"title" => ""
-		);
+		$this->fd = array();
 	}
 
 	/**
@@ -47,13 +38,13 @@ abstract class data
 	 * @param bool $clear clear after loading
 	 * @return bool|string FALSE or errors array
 	 */
-	function _getErrArr($clear = true)
+	function getErrArr($clear = true)
 	{
 		$ans = FALSE;
-		if (is_array($this->err)) {
-			$ans = $this->err;
+		if (is_array($this->_err)) {
+			$ans = $this->_err;
 			if ($clear) {
-				$this->err = array();
+				$this->_err = array();
 			}
 		}
 		return $ans;
@@ -65,13 +56,13 @@ abstract class data
 	 * @param bool $clear clear after loading
 	 * @return bool|string FALSE or error description
 	 */
-	function _getErr($fname, $clear = true)
+	function getErr($fname, $clear = true)
 	{
 		$ans = FALSE;
-		if (isset($this->err[$fname])) {
-			$ans = $this->err[$fname];
+		if (isset($this->_err[$fname])) {
+			$ans = $this->_err[$fname];
 			if ($clear) {
-				unset($this->err[$fname]);
+				unset($this->_err[$fname]);
 			}
 		}
 		return $ans;
@@ -82,9 +73,9 @@ abstract class data
 	 * @param string $fname name of function/error key
 	 * @param string $text error code or description
 	 */
-	function _setErr($fname, $text)
+	function setErr($fname, $text)
 	{
-		$this->err[$fname] = $text;
+		$this->_err[$fname] = $text;
 	}
 
 	/**
@@ -94,14 +85,14 @@ abstract class data
 	 * @param bool $clearWhenGet do chear on returning
 	 * @return bool|mixed err flag or value
 	 */
-	function _is_err($fname, $getErr = false, $clearWhenGet = true)
+	function isErr($fname, $getErr = false, $clearWhenGet = true)
 	{
 		$ans = false;
-		if (isset($this->err[$fname]) && !empty($this->err[$fname])) {
+		if (isset($this->_err[$fname]) && !empty($this->_err[$fname])) {
 			if (!$getErr) {
 				$ans = true;
 			} else {
-				$ans = $this->_getErr($fname, $clearWhenGet);
+				$ans = $this->getErr($fname, $clearWhenGet);
 			}
 		}
 		return $ans;

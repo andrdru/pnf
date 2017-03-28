@@ -3,7 +3,7 @@ namespace pnf;
 /**
  * Class loader
  */
-class loader extends data
+class loader extends userdata
 {
 	/**
 	 * @var loader() object var

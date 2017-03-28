@@ -8,7 +8,7 @@ class example{
 	function errRaise()
 	{
 		$loader = \pnf\loader::getInstance();
-		$loader->_setErr(__FUNCTION__, "here's another error");
+		$loader->setErr(__FUNCTION__, "here's another error");
 		return FALSE;
 	}
 
@@ -30,10 +30,10 @@ class example{
 			$ans = TRUE;
 		}
 		if ($param < 0) {
-			$loader->_setErr(__FUNCTION__, "less then zero");
+			$loader->setErr(__FUNCTION__, "less then zero");
 		}
 		if ($param == 0) {
-			$loader->_setErr(__FUNCTION__, "zero");
+			$loader->setErr(__FUNCTION__, "zero");
 		}
 		return $ans;
 	}
