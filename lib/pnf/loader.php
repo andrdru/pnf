@@ -110,28 +110,38 @@ class loader extends userdata
 	 *  - require
 	 *  - include_once
 	 *  - include
+	 *
+	 * @return bool
 	 */
 	private function _processLoad($path, $loadType = 'require_once')
 	{
-		switch ($loadType) {
-			default:
-			case "require_once": {
-				require_once($path);
+		$ans = FALSE;
+		if (file_exists($path)) {
+			switch ($loadType) {
+				default:
+				case "require_once": {
+					require_once($path);
+					$ans = TRUE;
+				}
+					break;
+				case "require": {
+					require($path);
+					$ans = TRUE;
+				}
+					break;
+				case "include_once": {
+					include_once($path);
+					$ans = TRUE;
+				}
+					break;
+				case "include": {
+					include($path);
+					$ans = TRUE;
+				}
+					break;
 			}
-				break;
-			case "require": {
-				require($path);
-			}
-				break;
-			case "include_once": {
-				include_once($path);
-			}
-				break;
-			case "include": {
-				include($path);
-			}
-				break;
 		}
+		return $ans;
 	}
 
 }
