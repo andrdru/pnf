@@ -5,13 +5,14 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/' . 'conf.php');
 
 //get $loader object 
-$loader = pnf\loader::getInstance();
+$loader = pnf\Loader::getInstance();
 
 //specify page title
 $loader->seo["title"] = "Main page title";
 
 //redefine some of $loader->modules values,like this
-//$loader->modules["main"] = "main.php"; //this will not take any effect, it's already defined
+$loader->modules["main"] = "module.php";
+//just demo, will not take any effect, it's already defined in /system/modules.php
 
-//load views to template and show page
+//load modules to template and show page
 $loader->printPage();

@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php $loader = pnf\loader::getInstance(); ?>
-	<title><?= $loader->seo['title'] ?></title>
-	<link rel="stylesheet" type="text/css" href="/css/style.css" media="all"/>
+    <?php $loader = pnf\Loader::getInstance(); ?>
+    <title><?= $loader->seo['title'] ?></title>
 </head>
-<body bgcolor="#f0fff0">
+<body>
 main template
-<div class="div-menu">
-	<?php
-	$loader->load("menu");
-	?>
-</div>
-<div class="div-main">
-	<?php
-	$loader->load("main");
-	?>
-</div>
-<div class="div-footer">
-	<?php
-	$loader->load("item1");
-	?>
+<div>
+    <?php
+    $loader->load("main");
+    ?>
 </div>
 </body>
 </html>

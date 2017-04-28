@@ -1,17 +1,14 @@
 # PNF Not a Framework
 
-PNF not a framework.  
-PNF not a CMS.  
-PNF not a completed web-site.  
-PNF just helps you to create web-application in PHP a little bit easily.  
+Tiny library helps you make web-application in PHP a little bit easily.  
 
 **PNF is PHP basis for development.**
 
 ## What for?
-Some things in PHP development is boring.  
+Some things in PHP development are boring.  
 Goal is make it as simple as possible.  
 
-## PNF helps with:
+## Features:
 * switching HTML templates
 * URL routing
 * processing form data
@@ -21,13 +18,6 @@ Goal is make it as simple as possible.
 * project file management
 
 ## Quick Start
-1. Clone this repository using git  
-`git clone https://github.com/andrdru/pnf.git`  
-or just download source code 
+1. Clone this repo  
+`git clone --recursive https://github.com/andrdru/pnf-full.git`  
 2. Put files into website root directory
-3. Try it!
-
-## Whats next?
-0. Look at demo files, modify it
-1. Create your own templates, modules, controllers and libraries  
-2. Use it anyway you like
