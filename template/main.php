@@ -1,7 +1,10 @@
-<!DOCTYPE html>
+<?php
+use Pnf\Loader;
+
+$loader = Loader::getInstance();
+?><!DOCTYPE html>
 <html>
 <head>
-    <?php $loader = pnf\Loader::getInstance(); ?>
     <title><?= $loader->seo['title'] ?></title>
 </head>
 <body>
