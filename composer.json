@@ -1,15 +1,14 @@
 {
-    "name": "andrdru/pnf-full",
-    "type": "project",
-    "require": {
-        "andrdru/pnf": "v1.0.0.x-dev"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Andrei",
-            "email": "andrdru@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev"
+  "name": "andrdru/pnf-full",
+  "type": "project",
+  "require": {
+    "andrdru/pnf": "v1.0.*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrei",
+      "email": "andrdru@gmail.com"
+    }
+  ]
 }
